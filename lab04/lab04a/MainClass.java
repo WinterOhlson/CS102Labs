@@ -10,10 +10,11 @@
 public class MainClass {
     public static void main(String[] args)
     {
-        Integer[] emptyList = {};
-        Integer[] listWithN = {0, 2, 5, 7};
-        Integer[] listWithout = {1, 3, 7, 9};
-        Double[] doubleList = {0.0, 2.0, 5.0, 7.0};
+        int[] emptyList = {};
+        int[] listWithN = {0, 2, 5, 7};
+        int[] listWithout = {1, 3, 7, 9};
+        double[] doubleList = {0.0, 2.0, 5.0, 7.0};
+        char[] charList = {'0', '2', '5', '7'};
         
         System.out.println("mySearch() on an empty list:");
         System.out.println(mySearch(emptyList, 5));
@@ -23,9 +24,11 @@ public class MainClass {
         System.out.println(mySearch(listWithout, 5));
         System.out.println("mySearch() on a list of Doubles instead of Integers:");
         System.out.println(mySearch(doubleList, 5));
+        System.out.println("mySearch() on a list of Characters instead of Integers:");
+        System.out.println(mySearch(charList, 5));
     }
     
-    public static int mySearch(Object[] inputArray, int n)
+    public static int mySearch(int[] inputArray, int n)
     {
         for(int i = 0; i < inputArray.length; i++)
         {
