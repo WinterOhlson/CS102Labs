@@ -30,29 +30,21 @@ public class Lab10 {
         Stack<Character> myStack = new Stack<>();
         for(int i = 0; i < equation.length(); i++)
         {
-            if(equation.charAt(i) == '(' || equation.charAt(i) == ')')
+            if(equation.charAt(i) == '(')
             {
                 myStack.push(equation.charAt(i));
             }
+            else if(equation.charAt(i) == ')')
+            {
+                if(myStack.isEmpty())
+                {
+                    return false;
+                }
+                myStack.pop();
+            }
         }
         
-        int balance = 0;
-        for(Character character : myStack)
-        {
-            if(character == '(')
-            {
-                balance += 1;
-            }
-            else if(character == ')')
-            {
-                balance -= 1;
-            }
-            if(balance < 0)
-            {
-                return false;
-            }
-        }
-        if(balance == 0)
+        if(myStack.isEmpty())
         {
             return true;
         }
